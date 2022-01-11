@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+<script type="text/javascript" src="https://github.com/rubyeffect/easy_fill/tree/master/lib/easy_fill-0.0.1.min.js"></script>
+  <title>Book Appointment</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/appointment.css" />
+  <script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.79.1022.0"></script>
+  <div class="d365-mkt-config" style="display:none"
+    data-website-id="qTOpfiQlVGWtAy-uakKiXYtdwscbFVmWdDcd11iCJ-Y"
+    data-hostname="4462553b060047428a8e5b3bf8a6ec82.svc.dynamics.com">
+</div>
+</head>
+
+<body>
+  <div id="container">
+    <!--This is a division tag for body container-->
+    <div id="body_header">
+      <!--This is a division tag for body header-->
+      <h1>Appointment Request Form</h1>
+      <p>Make your appointments more easier</p>
+
+    </div>
+    <form action="/" method="post">
+      <fieldset>
+        <legend><span class="number">1</span>Your basic details</legend>
+        <label for="name">Name*:</label>
+        <input type="text" id="name" name="user_name" placeholder="Atchyut (only first names)" required>
+
+        <label for="mail">Email*:</label>
+        <input type="email" id="mail" name="user_email" placeholder="abc@xyz.com" required>
+
+        <label for="tel">Contact Num:</label>
+        <input type="tel" id="tel" placeholder="Include country code" name="user_num">
+
+        <label for="website_name">Website:</label>
+        <input type="text" id="website_name" name="website_name" placeholder="www.google.com">
+
+
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="number">2</span>Appointment Details</legend>
+        <label for="appointment_for">Appointment for*:</label>
+        <select id="appointment_for" name="appointment_for" required>
+          <option value="GeneralPhysician">General Physician</option>
+          <option value="Dentist">Dentist</option>
+          <option value="gynecologist">Gynecologist</option>
+          <option value="ophthalmologist">Ophthalmologist</option>
+        </select>
+        <label for="appointment_description">Appointment Description:</label>
+        <textarea id="appointment_description" name="appointment_description" placeholder="I wish to get an appointment to skype for resolving a software problem."></textarea>
+        <label for="date">Date*:</label>
+        <input type="date" name="date" value="" required></input>
+        <br>
+        <label for="time">Time*:</label>
+        <input type="time" name="time" value="" required></input>
+        <br>
+        <label for="duration">How Long??(Minutes)</label>
+        <input type="radio" name="duration" value="30" checked> 30
+        <input type="radio" name="duration" value="60"> 60
+        <input type="radio" name="duration" value="90"> 90
+        <input type="radio" name="duration" value="more"> more
+      </fieldset>
+      <button type="submit" href="/">Request For Appointment</button>
+    </form>
+  </div>
+</body>
+
+
+<script type="text/javascript">
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+  
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+
+
+    if(urlParams){
+        if(urlParams["name"])
+           document.querySelector("#name").value = urlParams["name"];
+      
+        if(urlParams["mail"])      
+           document.querySelector("#mail").value = urlParams["mail"];
+
+        if(urlParams["tel"])
+           document.querySelector("#tel").value = urlParams["tel"];
+    } 
+       
+})();
+</script>
+
+</html>
